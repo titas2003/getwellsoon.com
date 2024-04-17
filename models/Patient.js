@@ -11,9 +11,17 @@ const patientSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    phone: {
+        type: String,
+        required: true,
+        unique: true
+    },
     password: {
         type: String,
         required: true
+    },
+    otp: {
+        type: String
     }
 }, { collection: 'Patients' }); // Set collection name
 
