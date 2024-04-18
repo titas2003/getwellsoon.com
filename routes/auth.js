@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
             from: 'nomail02024@gmail.com',
             to: email,
             subject: 'Welcome to Get Well Soon',
-            text: `Dear ${name},\n\nThank you for registering to Get Well Soon.\nI am Titas.\nYou have been successfully secured your membership with getwellsoon.com.\n\nThanks and Regards\nTitas Majumder.`
+            text: `Dear ${name},\n\nThank you for registering to Get Well Soon.\nI am Titas.\nYou have been successfully secured your membership with http://34.105.1.56/getwellsoon.com/.\n\nThanks and Regards\nTitas Majumder.`
         };
 
         // Sending the email

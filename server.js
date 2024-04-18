@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
 const doctReg = require('./routes/doctorAuth');
+const cors = require('cors');
 const { requestemailOTP, verifyemailOTP } = require('./routes/Otpmail');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+app.use(cors());
 // Middleware
 app.use(express.json());
 app.get('/', (req,res) => {
