@@ -29,7 +29,7 @@ async function requestemailOTP(req, res) {
             from: 'nomail02024@gmail.com',
             to: email,
             subject: 'Your One Time Password for Get Well Soon login',
-            text: `Your OTP is: ${otp}. \n\nDisclaimer: Please do not share this otp with anyone to maintain the security policies.\nPlease visit http://34.145.123.126:80/getwellsoon.com/Medicio/ for more details. \n\nThanks and Regards.`
+            text: `Your OTP is: ${otp}. \n\nDisclaimer: Please do not share this otp with anyone to maintain the security policies.\nPlease visit http://35.233.255.142:80/getwellsoon.com/Medicio/ for more details. \n\nThanks and Regards.`
         };
 
         // Sending the email

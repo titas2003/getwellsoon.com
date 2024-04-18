@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
+const doctReg = require('./routes/doctorAuth');
 const { requestemailOTP, verifyemailOTP } = require('./routes/Otpmail');
 
 const app = express();
@@ -20,6 +21,7 @@ mongoose.connect('mongodb+srv://admin:admin@getwellclust-01.yzq0kba.mongodb.net/
 // Routes
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/docauth', doctReg);
 app.use('/auth/otpreq', requestemailOTP);
 app.use('/auth/verifyotp', verifyemailOTP);
 
