@@ -9,6 +9,7 @@ const { requestemailOTP, verifyemailOTP } = require('./routes/Otpmail');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 app.use(cors());
 // Middleware
 app.use(express.json());
