@@ -17,7 +17,7 @@ app.use(cors());
 //setting session secter key:
 
 app.use(session({
-    secret: 'your_secret_key', // Replace with a secret key for session encryption
+    secret: 'getwellApi2024', // Replace with a secret key for session encryption
     resave: false,
     saveUninitialized: false
 }));
