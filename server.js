@@ -7,6 +7,7 @@ const cors = require('cors');
 const session = require('express-session');
 const { requestemailOTP, verifyemailOTP } = require('./routes/Otpmail');
 const { docEmailOTP, docEmailVerify } = require('./routes/otpDoc');
+const uploadLisence  = require('./routes/doctot_prof/uploadLisence')
 
 
 const app = express();
@@ -40,6 +41,7 @@ app.use('/auth/otpreq', requestemailOTP);
 app.use('/auth/verifyotp', verifyemailOTP);
 app.use('/auth/genDocOtp', docEmailOTP);
 app.use('/auth/verifyDocOtp', docEmailVerify);
+app.use('/upload-doc', uploadLisence);
 
 // Start the server
 app.listen(PORT, () => {
