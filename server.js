@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 const authRoutes = require('./routes/auth');
 const doctReg = require('./routes/doctorAuth');
 const cors = require('cors');
@@ -26,7 +27,7 @@ app.use(session({
 // Middleware
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.send("Thank you for reaching us...");
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://admin:admin@getwellclust-01.yzq0kba.mongodb.net/getwell-db-01')
