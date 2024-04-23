@@ -11,6 +11,7 @@ const { docEmailOTP, docEmailVerify } = require('./routes/otpDoc');
 const uploadLisence  = require('./routes/doctot_prof/uploadLisence')
 const appointment = require('./routes/appointment');
 const logout  = require('./routes/logout');
+const prescribe = require('./routes/doctot_prof/prescription');
 
 
 const app = express();
@@ -47,6 +48,7 @@ app.use('/auth/verifyDocOtp', docEmailVerify);
 app.use('/upload-doc', uploadLisence);
 app.use('/appointment', appointment);
 app.use('/auth/sign-out', logout);
+app.use('/checkup',prescribe);
 
 // Start the server
 app.listen(PORT, () => {

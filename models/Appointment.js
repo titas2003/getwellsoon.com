@@ -58,8 +58,8 @@ const appoSchema = new mongoose.Schema({
     diagnose: {
         type: String
     },
-    reports: reportSchema,
-    medicine: medSchema,
+    reports: [reportSchema],
+    medicine:[medSchema],
     payStatus: {
         type: String
     },
