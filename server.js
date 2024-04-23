@@ -12,6 +12,7 @@ const uploadLisence  = require('./routes/doctot_prof/uploadLisence')
 const appointment = require('./routes/appointment');
 const logout  = require('./routes/logout');
 const prescribe = require('./routes/doctot_prof/prescription');
+const reports = require('./routes/doctot_prof/reports');
 
 
 const app = express();
@@ -49,6 +50,7 @@ app.use('/upload-doc', uploadLisence);
 app.use('/appointment', appointment);
 app.use('/auth/sign-out', logout);
 app.use('/checkup',prescribe);
+app.use('/reports',reports);
 
 // Start the server
 app.listen(PORT, () => {
