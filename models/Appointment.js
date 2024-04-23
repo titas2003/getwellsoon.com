@@ -21,11 +21,18 @@ const medSchema = new mongoose.Schema({
     },
     date: {
         type: String
+    },
+    instruction: {
+        type: String
     }
 })
 
 const appoSchema = new mongoose.Schema({
     pname: {
+        type: String,
+        require: true
+    },
+    pphone: {
         type: String,
         require: true
     },
@@ -54,6 +61,14 @@ const appoSchema = new mongoose.Schema({
     reports: reportSchema,
     medicine: medSchema,
     payStatus: {
+        type: String
+    },
+    appoId: {
+        type: String,
+        unique: true,
+        require: true
+    },
+    status: {
         type: String
     }
 }, { collection: 'Appointments' });
