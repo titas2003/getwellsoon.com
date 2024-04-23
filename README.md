@@ -5,6 +5,8 @@ Patient:
 Register: /api/auth/signup
 Send OTP: /auth/otpreq/requestemailOTP
 Verify OTP: /auth/verifyotp/verifyemailOTP
+Book Appointment: /appointment/book-doc
+Logout: /auth/sign-out/logout
 
 
 Doctor:
