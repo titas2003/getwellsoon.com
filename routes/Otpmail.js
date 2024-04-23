@@ -70,6 +70,9 @@ async function verifyemailOTP(req, res) {
 
         // Check if OTP matches
         if (otp === patient.otp) {
+            req.session.email = email;
+            req.session.phone = patient.phone;
+            req.session._id = patient._id;
             // Clear OTP after successful verification
             await Patient.updateOne({ _id: patient._id }, { $unset: { otp: '' } });
 
