@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const Doctor = require('../models/Doctor');
 const transporter = require('../controller/mailconf');
+const Department = require('../models/Department');
 
 
 router.post('/doctorReg', async (req, res) => {
@@ -14,12 +15,17 @@ router.post('/doctorReg', async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ error: `Doctor ${name} already registered..` });
         }
+
+        let dept = await Department.findOne({department: department});
+        if(!dept) {
+            dept = await Department.create({ department: department })
+        }
         const doctor = new Doctor({ 
             username, 
             email,
             phone,
             caddress, 
-            department, 
+            department: dept._id, 
             fees,
             password: hashedPassword
         });
